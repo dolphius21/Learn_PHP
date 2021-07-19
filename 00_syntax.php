@@ -9,9 +9,14 @@
 </head>
 
 <body>
+  <form method="GET">
+    <input type="text" name="person">
+    <button>SUBMIT</button>
+  </form>
   <?php
-  echo "Hello World";
-  echo "and PHP"
+  $name = $_GET['person'];
+  echo "Hello $name";
+  echo " and PHP"
   ?>
 
   <?php
