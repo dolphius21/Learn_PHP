@@ -52,7 +52,10 @@ $products = $statement->fetchAll(PDO::FETCH_ASSOC);
           <td><?php echo $product['create_date'] ?></td>
           <td>
             <button type="button" class="btn btn-sm btn-outline-primary">edit</button>
-            <button type="button" class="btn btn-sm btn-outline-danger">delete</button>
+            <form style="display: inline;" action="delete.php" method="post">
+              <input type="hidden" name="id" value="<?php echo $product['id'] ?>">
+              <button type="submit" class="btn btn-sm btn-outline-danger">delete</button>
+            </form>
           </td>
         </tr>
       <?php endforeach; ?>
