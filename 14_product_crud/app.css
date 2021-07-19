@@ -4,3 +4,7 @@ body {
 .thumb-image {
   width: 50px;
 }
+.product-img-view {
+  width: 300px;
+  margin-bottom: 20px;
+}
