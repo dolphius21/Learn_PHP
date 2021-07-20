@@ -1,0 +1,42 @@
+<!-- Create table in MySQL -->
+CREATE TABLE posts (
+id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+subject varchar(128) not null,
+content varchar(1000) not null,
+date datetime not null
+);
+
+<!-- Insert data in MySQL table -->
+INSERT INTO posts (subject, content, date) VALUES ('My first post', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '2021-07-20 11:02:00')
+
+<!-- Select data from MySQL -->
+SELECT * FROM posts;
+SELECT subject FROM posts;
+SELECT * FROM posts WHERE id='1';
+SELECT * FROM posts WHERE id='1' || subject='My first post';
+SELECT * FROM posts WHERE id='1' && subject='My first post';
+
+<!-- Update data from MySQL -->
+UPDATE posts SET subject='This is a test edit', content='this is a test content' WHERE id='1';
+
+<!-- Delete data from MySQL -->
+DELETE FROM posts WHERE id='1';
+
+<!-- Set data order in MySQL -->
+SELECT * FROM posts ORDER BY id ASC;
+SELECT * FROM posts ORDER BY id DESC;
+SELECT * FROM posts ORDER BY subject ASC;
+SELECT * FROM posts ORDER BY subject DESC;
+
+CREATE TABLE users (
+  user_id int(11) AUTO_INCREMENT PRIMARY KEY not null,
+  user_firstName varchar(256) not null,
+  user_lastName varchar(256) not null,
+  user_email varchar(256) not null,
+  user_uid varchar(256) not null,
+  user_password varchar(256) not null
+);
+
+INSERT INTO users (user_firstName, user_lastName, user_email, user_uid, user_password) VALUES (
+	'Annie', 'Edison', 'annie.edison@gmail.com', 'annie245', 'test123'
+);
